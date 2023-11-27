@@ -1,0 +1,24 @@
+package d6;
+
+/*
+사람을 만들고 (이름) (인사를 할거지만, 누가 하는지에 따라 다르게 하고 싶다)
+학생을 만들고 (이름, 전공) (인사)
+강사를 만들고 (이름, 주제) (인사)
+ */
+public abstract class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // 추상 메서드: 작동법(메서드 바디) 작성하지 않고,
+    // 상속 받은 클래스에 구현을 위임하는 메서드
+    public abstract void sayHello();
+
+    public String getName() {
+        return this.name;
+    }
+}
