@@ -1,4 +1,4 @@
-package d6;
+package d6.object;
 
 public class Student extends Person {
     private String major;
@@ -8,10 +8,10 @@ public class Student extends Person {
         this.major = major;
     }
 
-    public void sayHello() {
-        System.out.println(String.format(
-                "Hello, I'm %s, and studying %s!",
-                getName(), this.major
-        ));
+    @Override
+    public String toString() {
+        return super.toString() + ", Student";
     }
+
+
 }
