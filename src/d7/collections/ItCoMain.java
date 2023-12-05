@@ -4,7 +4,34 @@ import java.util.*;
 
 public class ItCoMain {
     public static void main(String[] args) {
-        // ...전략
+        // Iterable 또는 Collection 또는 List 또는 Set
+        // 전부 순회 가능 하다.
+        // List와 Set 모두 Iterable이다. 서로 바꾸기 가능
+        List<String> skillList = new ArrayList<>();
+        skillList.add("Java");
+        skillList.add("git");
+        skillList.add("md");
+        skillList.add("python");
+        skillList.add("aws");
+        skillList.add("linux");
+        for (String skill : skillList) {
+            System.out.println(skill);
+            // 순회중 제거하면 예외가 발생할 수 있다.
+            // skillList.remove("python");
+        }
+
+        // Iterator
+        Iterator<String> iter = skillList.iterator();
+        while (iter.hasNext()) {
+            String skill = iter.next();
+            System.out.println(skill);
+            // iter.remove를 쓰면
+            // 안전하게 순회중 제거가 가능
+            if ("python".equals(skill))
+                iter.remove();
+        }
+        System.out.println(skillList);
+
         // Collection
         List<String> listCollection = new ArrayList<>();
         Set<String> setCollection = new HashSet<>();

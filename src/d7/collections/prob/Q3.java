@@ -1,8 +1,13 @@
 package d7.collections.prob;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+
 /*
-어떤 가게의 메뉴 <메뉴명> <가격>형태로 계속 입력된다.
-"order"가 입력되었을 때,
+어떤 가게의 메뉴 `<메뉴명> <가격>`형태로 계속 입력된다.
+`"order"`가 입력되었을 때,
 사용자의 단일 주문을 받고 금액을 출력하시오.
 
 예시 입출력
@@ -19,20 +24,14 @@ Latte
 ```text
 2500
 ```
-*/
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-
+ */
 public class Q3 {
     public static void main(String[] args) {
-        //String americano = "americano 1500";
-        //String[] menuLine = americano.split(" ");
-        //System.out.println(Arrays.toString(menuLine));
+//        String americano = "americano 1500";
+//        String[] menuLine = americano.split(" ");
+//        System.out.println(Arrays.toString(menuLine));
         Scanner scanner = new Scanner(System.in);
-
         // 메뉴 저장용 Map
         Map<String, Integer> menu = new HashMap<>();
         while (true) {
@@ -48,7 +47,7 @@ public class Q3 {
             Integer menuPrice = Integer.parseInt(menuLine[1]);
             menu.put(menuName, menuPrice);
         }
-        // 주문 받을 준비
+        // 주문받을 준비
         String order = scanner.nextLine();
         System.out.println(menu.get(order));
     }
